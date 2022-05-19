@@ -1,34 +1,66 @@
 package com.revature.pms.controller;
 
+import com.revature.pms.dao.ProductDAO;
 import com.revature.pms.model.Product;
+import com.revature.pms.services.ProductService;
 import com.revature.pms.utilities.CheckNumber;
 import com.revature.pms.utilities.GenerateRandomNumber;
 import com.revature.pms.utilities.PasswordHashing;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("product")
 public class ProductController {
 
+
     @Autowired()
-    Product product ;
+    Product product;
     @Autowired(required = false)        //If the bean is available , then inject it,
     //If the bean is not available , then dont give me an error
     PasswordHashing passwordHashing;
     @Autowired
     GenerateRandomNumber randomNumber;
 
-    @Autowired()
-    CheckNumber checkNumber ;
+
+    @Autowired
+    ProductService productService;
+    boolean result;
+
+    @PostMapping   //localhost:8084/product                   -HTTP method - POST
+    public ResponseEntity<String> saveProduct(@RequestBody Product product) {
+        ResponseEntity responseEntity = null;
+
+        if (productService.isProductExists(product.getProductId())) {
+            responseEntity = new ResponseEntity<String>
+                    ("Cannot save because product with product id :" + product.getProductId() + " already exists", HttpStatus.CONFLICT);   //409
+        } else {
+            result = productService.addProduct(product);
+            if (result) {
+                responseEntity = new ResponseEntity<String>
+                        ("Successfully Saved your product:" + product.getProductId(), HttpStatus.OK);        //200
+            } else {
+                responseEntity = new ResponseEntity<String>
+                        ("Cannot save because product because price or qoh is negative", HttpStatus.NOT_ACCEPTABLE);        //406
+            }
+        }
+        return responseEntity;
+    }
+
+
+
+
+
 
     @GetMapping("/home")     //localhost:8084/product/home
     public String home() {
         double result = randomNumber.getRandomNumber();
         return "##Welcome to Revature Product App## "
-                +product.displayMessage()+ " and password hashing message is : "
-                +passwordHashing.getHashedPassword()
-                + " Random number for this request is :"+result;
+                + product.displayMessage() + " and password hashing message is : "
+                + passwordHashing.getHashedPassword()
+                + " Random number for this request is :" + result;
     }
 
     @GetMapping     //localhost:8084/product
@@ -84,25 +116,7 @@ public class ProductController {
     /*
     This method will save a product in DB
      */
-    @PostMapping   //localhost:8084/product                   -HTTP method - POST
-    public String saveProduct(@RequestBody Product product) {
-        //call the methods to save  product
-        //check whether price or qoh is negative or not -- call method
-        //if it is negative then return
-        // "Cannot save your product because either price or roh is negative"
-        //else Successfully saved product   :
-      //  return "Successfully saved product   :" + product;
-        System.out.println("Saving details of: "+product);
 
-        if(checkNumber.checkNegativeInt(product.getQoh(),product.getPrice()))
-        {
-            return "Successfully saved product: "+product;
-        }
-        else {
-            return "Cannot save your product because either price or qoh is negative";
-
-        }
-    }
 
     /*
 This method will update a product in DB
