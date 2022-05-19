@@ -1,6 +1,7 @@
 package com.revature.pms.controller;
 
 import com.revature.pms.model.Product;
+import com.revature.pms.utilities.CheckNumber;
 import com.revature.pms.utilities.GenerateRandomNumber;
 import com.revature.pms.utilities.PasswordHashing;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,9 @@ public class ProductController {
     PasswordHashing passwordHashing;
     @Autowired
     GenerateRandomNumber randomNumber;
+
+    @Autowired()
+    CheckNumber checkNumber ;
 
     @GetMapping("/home")     //localhost:8084/product/home
     public String home() {
@@ -82,13 +86,22 @@ public class ProductController {
      */
     @PostMapping   //localhost:8084/product                   -HTTP method - POST
     public String saveProduct(@RequestBody Product product) {
-        System.out.println("Saving details  of :" + product);
         //call the methods to save  product
         //check whether price or qoh is negative or not -- call method
         //if it is negative then return
         // "Cannot save your product because either price or roh is negative"
         //else Successfully saved product   :
-        return "Successfully saved product   :" + product;
+      //  return "Successfully saved product   :" + product;
+        System.out.println("Saving details of: "+product);
+
+        if(checkNumber.checkNegativeInt(product.getQoh(),product.getPrice()))
+        {
+            return "Successfully saved product: "+product;
+        }
+        else {
+            return "Cannot save your product because either price or qoh is negative";
+
+        }
     }
 
     /*
