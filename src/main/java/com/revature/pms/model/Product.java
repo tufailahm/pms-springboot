@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
@@ -14,7 +15,7 @@ import javax.persistence.Table;
 @Component
 @Entity
 @Table(name = "product1",schema = "projectone")
-public class Product {
+public class Product implements Serializable {
     @Id
     private int productId;
     private String productName;

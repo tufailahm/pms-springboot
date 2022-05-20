@@ -1,0 +1,10 @@
+2022-05-20_21:33:47.961 [http-nio-8084-exec-9] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-20_21:33:47.962 [http-nio-8084-exec-9] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-20_21:33:47.962 [http-nio-8084-exec-9] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-20_21:33:49.438 [http-nio-8084-exec-9] INFO  c.r.pms.controller.ProductController - Product with product id :12971 saved successfully
+2022-05-20_21:50:51.174 [http-nio-8084-exec-8] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-20_21:50:51.174 [http-nio-8084-exec-8] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-20_21:50:51.175 [http-nio-8084-exec-8] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-20_21:50:51.813 [http-nio-8084-exec-8] INFO  c.r.pms.services.ProductServiceImpl - Adding product in service
+2022-05-20_21:50:51.813 [http-nio-8084-exec-8] WARN  c.r.pms.services.ProductServiceImpl - Failed to save product since price or qoh is negative
+2022-05-20_21:50:51.821 [http-nio-8084-exec-8] ERROR c.r.pms.controller.ProductController - Product with product id :1297122cannot be saved because of negative qoh or price
