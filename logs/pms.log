@@ -8,3 +8,34 @@
 2022-05-20_21:50:51.813 [http-nio-8084-exec-8] INFO  c.r.pms.services.ProductServiceImpl - Adding product in service
 2022-05-20_21:50:51.813 [http-nio-8084-exec-8] WARN  c.r.pms.services.ProductServiceImpl - Failed to save product since price or qoh is negative
 2022-05-20_21:50:51.821 [http-nio-8084-exec-8] ERROR c.r.pms.controller.ProductController - Product with product id :1297122cannot be saved because of negative qoh or price
+2022-05-21_01:38:46.578 [http-nio-8084-exec-7] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_01:38:46.642 [http-nio-8084-exec-7] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_01:38:46.642 [http-nio-8084-exec-7] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_01:42:33.143 [http-nio-8084-exec-2] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_01:42:33.144 [http-nio-8084-exec-2] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_01:42:33.144 [http-nio-8084-exec-2] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_01:43:41.586 [http-nio-8084-exec-8] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_01:43:41.586 [http-nio-8084-exec-8] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_01:43:41.586 [http-nio-8084-exec-8] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_01:45:09.054 [http-nio-8084-exec-2] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_01:45:09.055 [http-nio-8084-exec-2] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_01:45:09.055 [http-nio-8084-exec-2] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_01:54:48.335 [http-nio-8084-exec-4] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_01:54:48.336 [http-nio-8084-exec-4] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_01:54:48.336 [http-nio-8084-exec-4] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_01:54:48.339 [http-nio-8084-exec-4] INFO  c.r.pms.services.ProductServiceImpl - Adding product in service
+2022-05-21_01:54:48.340 [http-nio-8084-exec-4] WARN  c.r.pms.services.ProductServiceImpl - Failed to save product since price or qoh is negative
+2022-05-21_01:54:48.340 [http-nio-8084-exec-4] ERROR c.r.pms.controller.ProductController - Product with product id :4223cannot be saved because of negative qoh or price
+2022-05-21_01:54:55.161 [http-nio-8084-exec-3] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_01:54:55.161 [http-nio-8084-exec-3] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_01:54:55.161 [http-nio-8084-exec-3] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_01:54:55.168 [http-nio-8084-exec-3] INFO  c.r.pms.services.ProductServiceImpl - Adding product in service
+2022-05-21_01:54:55.369 [http-nio-8084-exec-3] INFO  c.r.pms.controller.ProductController - Product with product id :4223 saved successfully
+2022-05-21_02:00:40.387 [http-nio-8084-exec-6] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_02:00:40.388 [http-nio-8084-exec-6] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_02:00:40.388 [http-nio-8084-exec-6] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_02:00:40.390 [http-nio-8084-exec-6] WARN  c.r.pms.controller.ProductController - Product with product id :4223already exists
+2022-05-21_02:01:01.456 [http-nio-8084-exec-5] INFO  c.r.pms.controller.ProductController - INFO - Save product started the execution
+2022-05-21_02:01:01.457 [http-nio-8084-exec-5] WARN  c.r.pms.controller.ProductController - WARN - Save product started the execution
+2022-05-21_02:01:01.457 [http-nio-8084-exec-5] ERROR c.r.pms.controller.ProductController - ERROR - Save product started the execution
+2022-05-21_02:01:01.461 [http-nio-8084-exec-5] INFO  c.r.pms.services.ProductServiceImpl - Adding product in service

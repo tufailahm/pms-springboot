@@ -13,6 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.xml.ws.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +38,21 @@ public class ProductController {
     ProductService productService;
     boolean result;
 
+    public ProductController(){
+        System.out.println("Product controller called");
+    }
+
+    @PostConstruct              //lifecycle method
+    public void callMeFirst(){
+        //for initilize
+        result = true;
+        System.out.println("Call me First called");
+    }
+
+    @PreDestroy
+    public void callmeLast(){
+
+    }
     @PostMapping   //localhost:8084/product                   -HTTP method - POST
     public ResponseEntity<String> saveProduct(@RequestBody Product product) {
         ResponseEntity responseEntity = null;
@@ -156,9 +174,10 @@ public class ProductController {
     //Here is the result for product in the price range of 100 and 500
 
     @GetMapping("/filterProductByPrice/{lowerPrice}/and/{upperPrice}")
-    public String filterProductByPrice(@PathVariable("lowerPrice") int lowerPrice, @PathVariable("upperPrice") int upperPrice) {
+    public List<Product> filterProductByPrice(@PathVariable("lowerPrice") int lowerPrice, @PathVariable("upperPrice") int upperPrice) {
         //call the methods to fetch product details of this productname
-        return "Here is the result tt for product in the price range of " + lowerPrice + " and " + upperPrice;
+        List<Product> products = productService.filterProductByPrice(lowerPrice,upperPrice);
+        return products;
     }
 
     //localhost:8084/product/outOfStockProductDetails/350

@@ -58,7 +58,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public boolean isProductExists(int productId) {
+    public Boolean isProductExists(Integer productId) {
         return productDAO.existsById(productId);
     }
 

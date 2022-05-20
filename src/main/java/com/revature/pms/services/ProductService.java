@@ -9,7 +9,7 @@ public interface ProductService {
     public boolean deleteProduct(int productId);
     public boolean updateProduct(Product product);
     public Product getProduct(int productId);
-    public boolean isProductExists(int productId);
+    public Boolean isProductExists(Integer productId);
     public List<Product> getProduct(String productName);
     public List<Product> getProducts();
 
