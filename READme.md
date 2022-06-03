@@ -12,4 +12,7 @@ Spring Framework: Spring Boot, Spring Data
 
 Register: POST http://localhost:8084/p1/register { "email": "user email", "password": "password" }
 
+View all Products :
+http://ec2-52-73-113-113.compute-1.amazonaws.com:8084/product
+
 AWS
