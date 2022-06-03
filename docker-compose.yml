@@ -1,0 +1,28 @@
+version: '2'
+networks:
+  app:
+
+services:
+  product-app:
+    image: 'spring-boot-devops-product-app:latest'
+    build:    #reads DockerFile
+      context: ./
+    container_name: product-devops-app
+    ports:
+      - 8084:8084
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
+      - SPRING_DATASOURCE_USERNAME=compose-postgres
+      - SPRING_DATASOURCE_PASSWORD=compose-postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=compose-postgres
+      - POSTGRES_PASSWORD=compose-postgres

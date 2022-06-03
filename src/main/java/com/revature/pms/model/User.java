@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Data
 @Entity
-@Table(name = "user100", schema = "projectone")
+@Table(name = "user100")
 @Component
 @AllArgsConstructor
 @NoArgsConstructor

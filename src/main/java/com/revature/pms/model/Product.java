@@ -13,7 +13,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 //@Component
 @Entity
-@Table(name = "product1",schema = "projectone")
+@Table(name = "product1")
 public class Product implements Serializable {
     @Id
     private int productId;
