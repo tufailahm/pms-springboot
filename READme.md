@@ -14,5 +14,13 @@ Register: POST http://localhost:8084/p1/register { "email": "user email", "passw
 
 View all Products :
 http://ec2-52-73-113-113.compute-1.amazonaws.com:8084/product
-
+Add a product :
+POST - ec2-52-73-113-113.compute-1.amazonaws.com:8084/product
+BODY :  {
+"productId": 12,
+"productName": "NewLakme",
+"qoh": 123,
+"price": 1999
+}
 AWS
+
